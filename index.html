@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pizza24</title>
+    <!-- サイト用 -->
+     <link rel="stylesheet" href="css/html5reset-1.6.1.css">
+      <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/monokai-sublime.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/solid.css"
+      integrity="sha384-r/k8YTFqmlOaqRkZuSiE9trsrDXkh07mRaoGBMoDcmA58OHILZPsk29i2BsFng1B"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css"
+      integrity="sha384-4aon80D8rXCGx9ayDt85LbyUHeMWd3UiBaWliBlJ53yzm9hqN21A+o1pqoyK04h+"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
+    />
+  </head>
+  
+  <body class="h-100">
+    <div id="app" class="h-100 d-flex flex-column">
+      <div class="nav-container">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+          <div class="container">
+
+             <div id="iconimg">
+                <img src="/images/pizza.png" alt="テキストテキストテキスト">       
+            </div>      
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a href="/" class="nav-link route-link">Pizza 42 / Home</a>
+                </li>
+              </ul>
+              <ul class="navbar-nav d-none d-md-block">
+                <!-- Login button: show if NOT authenticated -->
+                <li class="nav-item auth-invisible">
+                  <button
+                    id="qsLoginBtn"
+                    onclick="login()"
+                    class="btn btn-primary btn-margin auth-invisible hidden"
+                  >
+                    Log in
+                  </button>
+                </li>
+                <!-- / Login button -->
+
+                <!-- Fullsize dropdown: show if authenticated -->
+                <li class="nav-item dropdown auth-visible hidden">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="profileDropDown"
+                    data-toggle="dropdown"
+                  >
+                    <!-- Profile image should be set to the profile picture from the id token -->
+                    <img
+                      alt="Profile picture"
+                      class="nav-user-profile profile-image rounded-circle"
+                      width="50"
+                    />
+                  </a>
+                  <div class="dropdown-menu">
+                    <!-- Show the user's full name from the id token here -->
+                    <div class="dropdown-header nav-user-name user-name"></div>
+                    <a
+                      href="/profile"
+                      class="dropdown-item dropdown-profile route-link"
+                    >
+                      <i class="fas fa-user mr-3"></i> Profile
+                    </a>
+                    <a
+                      href="#"
+                      class="dropdown-item"
+                      id="qsLogoutBtn"
+                      onclick="logout()"
+                    >
+                      <i class="fas fa-power-off mr-3"></i> Log out
+                    </a>
+                  </div>
+    <div class="cart">
+        <div class="cart_cnt hidden">
+            <span id="js_cart_cnt"></span>
+        </div>
+      <a class="cart_icon" href="confirm.html">
+          <img src="img/cart.png" alt="">order
+      </a>
+    </div>
+                </li>
+                <!-- /Fullsize dropdown -->
+              </ul>
+
+              <!-- Responsive login button: show if NOT authenticated -->
+              <ul class="navbar-nav d-md-none auth-invisible">
+                <button
+                  class="btn btn-primary btn-block auth-invisible hidden"
+                  id="qsLoginBtn"
+                  onclick="login()"
+                >
+                  Log in
+                </button>
+              </ul>
+              <!-- /Responsive login button -->
+
+              <!-- Responsive profile dropdown: show if authenticated -->
+              <ul
+                class="
+                  navbar-nav
+                  d-md-none
+                  auth-visible
+                  hidden
+                  justify-content-between
+                "
+                style="min-height: 125px"
+              >
+                <li class="nav-item">
+                  <span class="user-info">
+                    <!-- Profile image should be set to the profile picture from the id token -->
+                    <img
+                      alt="Profile picture"
+                      class="
+                        nav-user-profile
+                        d-inline-block
+                        profile-image
+                        rounded-circle
+                        mr-3
+                      "
+                      width="50"
+                    />
+                    <!-- Show the user's full name from the id token here -->
+                    <h6 class="d-inline-block nav-user-name user-name"></h6>
+                  </span>
+                </li>
+                <li>
+                  <i class="fas fa-user mr-3"></i>
+                  <a href="/profile" class="route-link">Profile</a>
+                </li>
+
+                <li>
+                  <i class="fas fa-power-off mr-3"></i>
+                  <a href="#" id="qsLogoutBtn" onclick="logout()">Log out</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+        <main>
+            <div id="mainvisual">
+            <img src="/images/pizzatop.jpg" alt="テキストテキストテキスト">             
+           </div>
+        </main>
+ <!-- /mainPage -->
+    <div id="main-content" class="container mt-5 flex-grow-1">
+        <div id="content-home" class="page">
+        <!-- ここからECサイト  -->
+      <section id="bicycle" class="wrapper">
+        <h2 class="section-title">Menu</h2>
+        <ul>
+          <li>
+            <img src="img/bicycle1.jpg" alt="テキストテキストテキスト">
+            <h3 class="content-title">pizza A</h3>
+            <div class="item_textbox">
+            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">2000</span></div>
+            <div class="item_btnarea">
+              <button class="item_cart_btn js_cart_btn" data-name="pizza A" data-price="2000"><a class="item_buy_btn" href="confirm.html">購入</a></button>
+            </div>
+          </div>
+
+          </li>
+          <li>
+            <img src="img/bicycle2.jpg" alt="テキストテキストテキスト">
+            <h3 class="content-title">pizza B</h3>
+          </li>
+          <li>
+            <img src="img/bicycle3.jpg" alt="テキストテキストテキスト">
+            <h3 class="content-title">pizza C</h3>
+          </li>
+        </ul>
+      </section>        </div>
+<!---->
+        <div class="page" id="content-profile">
+          <div class="container">
+            <div class="row align-items-center profile-header">
+              <div class="col-md-2">
+                <img
+                  alt="User's profile picture"
+                  class="rounded-circle img-fluid profile-image mb-3 mb-md-0"
+                />
+              </div>
+              <div class="col-md">
+                <h2 class="user-name"></h2>
+                <p class="lead text-muted user-email"></p>
+              </div>
+            </div>
+
+            <div class="row">
+              <pre class="rounded">
+                <code id="profile-data" class="json"></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="bg-light text-center p-5">
+        <div class="logo"></div>
+        <p>
+          Sample project provided by
+          <a href="https://auth0.com">Auth0</a>
+        </p>
+      </footer>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.19/auth0-spa-js.production.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+  <div id="wrapper">
+    <div class="item_wrapper">
+      <ul class="item_list">
+        <li class="item">
+          <div class="item_img">
+              <img src="img/denim.png" alt="">
+          </div>
+          <div class="item_textbox">
+            <div class="item_title"><h2>ズボン</h2></div>
+            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">3000</span></div>
+            <div class="item_btnarea">
+              <button class="item_cart_btn js_cart_btn" data-name="ズボン" data-price="3000">カート</button>
+              <a class="item_buy_btn" href="confirm.html">購入</a>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="item_img">
+              <img src="img/funnel.png" alt="">
+          </div>
+          <div class="item_textbox">
+            <div class="item_title"><h2>ジョウロ</h2></div>
+            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">2000</span></div>
+            <div class="item_btnarea">
+              <button class="item_cart_btn js_cart_btn" data-name="ジョウロ" data-price="2000">カート</button>
+              <a class="item_buy_btn" href="confirm.html">購入</a>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="item_img">
+              <img src="img/glasses.png" alt="">
+          </div>
+          <div class="item_textbox">
+            <div class="item_title"><h2>メガネ</h2></div>
+            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">20000</span></div>
+            <div class="item_btnarea">
+              <button class="item_cart_btn js_cart_btn" data-name="メガネ" data-price="20000">カート</button>
+              <a class="item_buy_btn" href="confirm.html">購入</a>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="item_img">
+              <img src="img/painting.png" alt="">
+          </div>
+          <div class="item_textbox">
+            <div class="item_title"><h2>風景画</h2></div>
+            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">500000</span></div>
+            <div class="item_btnarea">
+              <button class="item_cart_btn js_cart_btn" data-name="風景画" data-price="500000">カート</button>
+              <a class="item_buy_btn" href="confirm.html">購入</a>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="item_img">
+              <img src="img/wine.png" alt="">
+          </div>
+          <div class="item_textbox">
+            <div class="item_title"><h2>ワイン</h2></div>
+            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">4000</span></div>
+            <div class="item_btnarea">
+              <button class="item_cart_btn js_cart_btn" data-name="ワイン" data-price="4000">カート</button>
+              <a class="item_buy_btn" href="confirm.html">購入</a>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="item_img">
+              <img src="img/cake.png" alt="">
+          </div>
+          <div class="item_textbox">
+            <div class="item_title"><h2>ホールケーキ</h2></div>
+            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">3000</span></div>
+            <div class="item_btnarea">
+              <button class="item_cart_btn js_cart_btn" data-name="ホールケーキ" data-price="3000">カート</button>
+              <a class="item_buy_btn" href="confirm.html">購入</a>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="item_img">
+              <img src="img/diamond.png" alt="">
+          </div>
+          <div class="item_textbox">
+            <div class="item_title"><h2>ダイアモンド</h2></div>
+            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">10000000</span></div>
+            <div class="item_btnarea">
+              <button class="item_cart_btn js_cart_btn" data-name="ダイアモンド" data-price="10000000">カート</button>
+              <a class="item_buy_btn" href="confirm.html">購入</a>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="item_img">
+              <img src="img/bicycle.png" alt="">
+          </div>
+          <div class="item_textbox">
+            <div class="item_title"><h2>自転車</h2></div>
+            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">30000</span></div>
+            <div class="item_btnarea">
+              <button class="item_cart_btn js_cart_btn" data-name="自転車" data-price="30000">カート</button>
+              <a class="item_buy_btn" href="confirm.html">購入</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    </div>
+  </div>
+  </body>
+</html>
