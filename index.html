@@ -6,16 +6,16 @@
     <!-- サイト用 -->
      <link rel="stylesheet" href="css/html5reset-1.6.1.css">
       <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <link rel="stylesheet" href="/css/style.css">
 
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
-     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/css/main.css" />
     <link
       rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/monokai-sublime.min.css"
@@ -46,12 +46,12 @@
           <div class="container">
 
              <div id="iconimg">
-                <img src="/images/pizza.png" alt="テキストテキストテキスト">       
+                <img src="/images/pizza.png" alt="logo">       
             </div>      
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a href="/" class="nav-link route-link">Pizza 42 / Home</a>
+                  <a href="index.html" class="nav-link route-link">Pizza 42 / Home</a>
                 </li>
               </ul>
               <ul class="navbar-nav d-none d-md-block">
@@ -100,14 +100,6 @@
                       <i class="fas fa-power-off mr-3"></i> Log out
                     </a>
                   </div>
-    <div class="cart">
-        <div class="cart_cnt hidden">
-            <span id="js_cart_cnt"></span>
-        </div>
-      <a class="cart_icon" href="confirm.html">
-          <img src="img/cart.png" alt="">order
-      </a>
-    </div>
                 </li>
                 <!-- /Fullsize dropdown -->
               </ul>
@@ -155,7 +147,7 @@
                 </li>
                 <li>
                   <i class="fas fa-user mr-3"></i>
-                  <a href="/profile" class="route-link">Profile</a>
+                  <a href="profile.html" class="route-link">Profile</a>
                 </li>
 
                 <li>
@@ -175,12 +167,12 @@
  <!-- /mainPage -->
     <div id="main-content" class="container mt-5 flex-grow-1">
         <div id="content-home" class="page">
-        <!-- ここからECサイト  -->
+ <!-- Menu  -->
       <section id="bicycle" class="wrapper">
         <h2 class="section-title">Menu</h2>
         <ul>
           <li>
-            <img src="img/bicycle1.jpg" alt="テキストテキストテキスト">
+            <img src="/images/PizzaA.jpg" alt="PizzaA">
             <h3 class="content-title">pizza A</h3>
             <div class="item_textbox">
             <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">2000</span></div>
@@ -191,12 +183,24 @@
 
           </li>
           <li>
-            <img src="img/bicycle2.jpg" alt="テキストテキストテキスト">
+            <img src="/images/PizzaB.jpg" alt="PizzaB">
             <h3 class="content-title">pizza B</h3>
+            <div class="item_textbox">
+            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">3000</span></div>
+            <div class="item_btnarea">
+              <button class="item_cart_btn js_cart_btn" data-name="pizza B" data-price="3000"><a class="item_buy_btn" href="confirm.html">購入</a></button>
+            </div>
+          </div>
           </li>
           <li>
-            <img src="img/bicycle3.jpg" alt="テキストテキストテキスト">
+            <img src="/images/PizzaC.jpg" alt="PizzaC">
             <h3 class="content-title">pizza C</h3>
+            <div class="item_textbox">
+            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">2500</span></div>
+            <div class="item_btnarea">
+              <button class="item_cart_btn js_cart_btn" data-name="pizza C" data-price="2500"><a class="item_buy_btn" href="confirm.html">購入</a></button>
+            </div>
+          </div>
           </li>
         </ul>
       </section>        </div>
@@ -223,14 +227,6 @@
           </div>
         </div>
       </div>
-
-      <footer class="bg-light text-center p-5">
-        <div class="logo"></div>
-        <p>
-          Sample project provided by
-          <a href="https://auth0.com">Auth0</a>
-        </p>
-      </footer>
     </div>
 
 
@@ -241,112 +237,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/app.js"></script>
-  <div id="wrapper">
-    <div class="item_wrapper">
-      <ul class="item_list">
-        <li class="item">
-          <div class="item_img">
-              <img src="img/denim.png" alt="">
-          </div>
-          <div class="item_textbox">
-            <div class="item_title"><h2>ズボン</h2></div>
-            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">3000</span></div>
-            <div class="item_btnarea">
-              <button class="item_cart_btn js_cart_btn" data-name="ズボン" data-price="3000">カート</button>
-              <a class="item_buy_btn" href="confirm.html">購入</a>
-            </div>
-          </div>
-        </li>
-        <li class="item">
-          <div class="item_img">
-              <img src="img/funnel.png" alt="">
-          </div>
-          <div class="item_textbox">
-            <div class="item_title"><h2>ジョウロ</h2></div>
-            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">2000</span></div>
-            <div class="item_btnarea">
-              <button class="item_cart_btn js_cart_btn" data-name="ジョウロ" data-price="2000">カート</button>
-              <a class="item_buy_btn" href="confirm.html">購入</a>
-            </div>
-          </div>
-        </li>
-        <li class="item">
-          <div class="item_img">
-              <img src="img/glasses.png" alt="">
-          </div>
-          <div class="item_textbox">
-            <div class="item_title"><h2>メガネ</h2></div>
-            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">20000</span></div>
-            <div class="item_btnarea">
-              <button class="item_cart_btn js_cart_btn" data-name="メガネ" data-price="20000">カート</button>
-              <a class="item_buy_btn" href="confirm.html">購入</a>
-            </div>
-          </div>
-        </li>
-        <li class="item">
-          <div class="item_img">
-              <img src="img/painting.png" alt="">
-          </div>
-          <div class="item_textbox">
-            <div class="item_title"><h2>風景画</h2></div>
-            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">500000</span></div>
-            <div class="item_btnarea">
-              <button class="item_cart_btn js_cart_btn" data-name="風景画" data-price="500000">カート</button>
-              <a class="item_buy_btn" href="confirm.html">購入</a>
-            </div>
-          </div>
-        </li>
-        <li class="item">
-          <div class="item_img">
-              <img src="img/wine.png" alt="">
-          </div>
-          <div class="item_textbox">
-            <div class="item_title"><h2>ワイン</h2></div>
-            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">4000</span></div>
-            <div class="item_btnarea">
-              <button class="item_cart_btn js_cart_btn" data-name="ワイン" data-price="4000">カート</button>
-              <a class="item_buy_btn" href="confirm.html">購入</a>
-            </div>
-          </div>
-        </li>
-        <li class="item">
-          <div class="item_img">
-              <img src="img/cake.png" alt="">
-          </div>
-          <div class="item_textbox">
-            <div class="item_title"><h2>ホールケーキ</h2></div>
-            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">3000</span></div>
-            <div class="item_btnarea">
-              <button class="item_cart_btn js_cart_btn" data-name="ホールケーキ" data-price="3000">カート</button>
-              <a class="item_buy_btn" href="confirm.html">購入</a>
-            </div>
-          </div>
-        </li>
-        <li class="item">
-          <div class="item_img">
-              <img src="img/diamond.png" alt="">
-          </div>
-          <div class="item_textbox">
-            <div class="item_title"><h2>ダイアモンド</h2></div>
-            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">10000000</span></div>
-            <div class="item_btnarea">
-              <button class="item_cart_btn js_cart_btn" data-name="ダイアモンド" data-price="10000000">カート</button>
-              <a class="item_buy_btn" href="confirm.html">購入</a>
-            </div>
-          </div>
-        </li>
-        <li class="item">
-          <div class="item_img">
-              <img src="img/bicycle.png" alt="">
-          </div>
-          <div class="item_textbox">
-            <div class="item_title"><h2>自転車</h2></div>
-            <div class="item_price"><span class="yen_symbol">¥</span><span class="js_get_price">30000</span></div>
-            <div class="item_btnarea">
-              <button class="item_cart_btn js_cart_btn" data-name="自転車" data-price="30000">カート</button>
-              <a class="item_buy_btn" href="confirm.html">購入</a>
-            </div>
-          </div>
         </li>
       </ul>
     </section>
